@@ -1,7 +1,7 @@
 const screenshotButton = document.querySelector(".screenshot-button");
 screenshotButton.addEventListener("click", async () => {
     try {
-        const response = await fetch("http://localhost:3000/api/ss/generate-ss",{
+        const response = await fetch("https://infography-backend.onrender.com/api/ss/generate-ss",{
             method:"POST",
         });
 
