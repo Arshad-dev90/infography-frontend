@@ -1,0 +1,186 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Use Poppins for everything */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e6f2f5;
+            color: #006574;
+            line-height: 1.6;
+        }
+
+        /* Wrapper for horizontal scrolling on mobile */
+        .wrapper {
+            overflow-x: auto;
+        }
+
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        /* Main heading styling */
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 20px 0 40px;
+            font-weight: 800;
+            /* Bolder weight to match infographic style */
+            color: #006574;
+            line-height: 1.2;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /* Vertical timeline line */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #006574;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Each timeline item as a grid */
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            position: relative;
+            margin-bottom: 60px;
+            padding: 20px 40px;
+            min-height: 150px;
+        }
+
+        /* Alternate the order on even items */
+        .timeline-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .timeline-item:nth-child(even)>* {
+            direction: ltr;
+        }
+
+        /* Connector circle in the center */
+        .connector {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid #006574;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* Number box for the circular numbers */
+        .number-box {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        .number-bg {
+            background-color: #a9d7e0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+        }
+
+        .number-fg {
+            background-color: #006574;
+            width: 83%;
+            height: 83%;
+            position: absolute;
+            top: 8.5%;
+            left: 8.5%;
+            z-index: 1;
+            border-radius: 50%;
+        }
+
+        /* Big numbers styling */
+        .number {
+            position: absolute;
+            font-size: 5rem;
+            font-weight: 900;
+            /* Extra-bold for the big numbers */
+            color: #006574;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            /* Subtle shadow */
+        }
+
+        /* Content styling */
+        .content {
+            padding: 20px;
+        }
+
+        .content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #006574;
+            font-weight: 700;
+            /* Bold headings */
+        }
+
+        .content p {
+            font-size: 0.95rem;
+            font-weight: 400;
+            /* Normal weight for paragraphs */
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .number-box {
+                width: 80px;
+                height: 80px;
+            }
+
+            .number-bg {
+                width: 100%;
+                height: 100%;
+            }
+
+            .number-fg {
+                width: 80%;
+                height: 80%;
+                top: 10%;
+                left: 10%;
+            }
+
+            .number {
+                font-size: 3rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .timeline-item {
+                padding: 15px 20px;
+                min-height: 120px;
+                margin-bottom: 40px;
+            }
+        }

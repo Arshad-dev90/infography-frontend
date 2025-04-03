@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harnessing Infographics for Effective Pinterest Marketing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+
+        body {
+            background-color: #e6f2f5;
+            color: #006574;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 20px 0 40px;
+            font-weight: bold;
+            color: #006574;
+            line-height: 1.2;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #006574;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 60px;
+            min-height: 150px;
+            clear: both;
+        }
+
+        /* Styling for the timeline connection boxes */
+        .connector {
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-color: white;
+            border: 4px solid #006574;
+            top: 50%;
+            z-index: 1;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Left side content */
+        .left {
+            left: 0;
+            text-align: right;
+            padding-right: 60px;
+            width: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            /* Align content to the right side */
+            top: 0;
+            bottom: 0;
+        }
+
+        /* Right side content */
+        .right {
+            right: 0;
+            text-align: left;
+            padding-left: 60px;
+            width: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 0;
+            bottom: 0;
+        }
+
+        /* Number boxes styling */
+        .number-box {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .number-bg {
+            background-color: #a9d7e0;
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .number-fg {
+            background-color: #006574;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .number {
+            position: absolute;
+            font-size: 5rem;
+            font-weight: bold;
+            color: #a9d7e0;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #006574;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .spacer {
+            height: 240px;
+            width: 100%;
+            clear: both;
+        }
+
+        .content {
+            max-width: 100%;
+        }
+
+        /* Screenshot button styling */
+        .screenshot-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #006574;
+            color: #e6f2f5;
+            border: 3px solid #a9d7e0;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 101, 116, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .screenshot-button:hover {
+            background-color: #a9d7e0;
+            color: #006574;
+            border-color: #006574;
+            transform: translateY(-2px);
+        }
+
+        @media screen and (max-width: 600px) {
+
+            /* Keep the timeline centered */
+            .timeline::after {
+                left: 50%;
+            }
+
+            .timeline-item {
+                padding: 10px 0;
+                margin-bottom: 80px;
+            }
+
+            /* Adjust sizing for mobile */
+            .number-box {
+                width: 80px;
+                height: 80px;
+            }
+
+            .number-bg {
+                width: 80px;
+                height: 80px;
+            }
+
+            .number-fg {
+                width: 65px;
+                height: 65px;
+                top: 7px;
+                left: 7px;
+            }
+
+            .number {
+                font-size: 3rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            /* Maintain the alternating layout */
+            .left {
+                padding-right: 40px;
+            }
+
+            .right {
+                padding-left: 40px;
+            }
+
+            /* Make text more readable on mobile */
+            h3 {
+                font-size: 1.2rem;
+                margin-bottom: 8px;
+                line-height: normal;
+            }
+
+            p {
+                font-size: 0.85rem;
+                color: black;
+                line-height: 16px;
+                font-weight: 400;
+            }
+
+            /* Adjust spacing */
+            .spacer {
+                height: 180px;
+            }
+
+            /* Adjust button for mobile */
+            .screenshot-button {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Harnessing Infographics for Effective Pinterest Marketing</h1>
+
+        <div class="timeline">
+            <!-- Item 1 -->
+            <div class="timeline-item">
+                <div class="connector"></div>
+                <div class="left">
+                    <div class="number-box">
+                        <div class="number-bg"></div>
+                        <div class="number-fg"></div>
+                        <div class="number">1</div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="content">
+                        <h3>Enhancing Visual Appeal</h3>
+                        <p>Infographics leverage visually appealing designs, which can capture users' attention quickly
+                            on Pinterest's image-centric platform. This visual aspect can lead to increased engagement
+                            and higher pin rates.</p>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item">
+                <div class="connector"></div>
+                <div class="left">
+                    <div class="content">
+                        <h3>Simplifying Complex Information</h3>
+                        <p>Infographics simplify complex data and concepts into digestible visual formats. This is
+                            particularly useful for e-commerce brands or service providers looking to explain products
+                            or services quickly.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="number-box">
+                        <div class="number-bg"></div>
+                        <div class="number-fg"></div>
+                        <div class="number">2</div>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="timeline-item">
+                <div class="connector"></div>
+                <div class="left">
+                    <div class="number-box">
+                        <div class="number-bg"></div>
+                        <div class="number-fg"></div>
+                        <div class="number">3</div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="content">
+                        <h3>Boosting Brand Awareness</h3>
+                        <p>Consistent use of infographics helps in building brand identity. By using specific colors,
+                            fonts, and styles, brands can create a distinct visual language that resonates with users
+                            and enhances recall.</p>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="timeline-item">
+                <div class="connector"></div>
+                <div class="left">
+                    <div class="content">
+                        <h3>Encouraging Shares and Saves</h3>
+                        <p>Infographics are highly shareable content; they encourage users to save, pin, or share them
+                            due to their informative nature. This can lead to organic reach and visibility on Pinterest.
+                        </p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="number-box">
+                        <div class="number-bg"></div>
+                        <div class="number-fg"></div>
+                        <div class="number">4</div>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="timeline-item">
+                <div class="connector"></div>
+                <div class="left">
+                    <div class="number-box">
+                        <div class="number-bg"></div>
+                        <div class="number-fg"></div>
+                        <div class="number">5</div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="content">
+                        <h3>Driving Traffic to Websites</h3>
+                        <p>Infographics can include call-to-actions (CTAs) linking back to your website or landing page,
+                            facilitating the conversion of Pinterest users into website visitors, thus driving traffic
+                            effectively.</p>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="timeline-item">
+                <div class="connector"></div>
+                <div class="left">
+                    <div class="content">
+                        <h3>Leveraging SEO Benefits</h3>
+                        <p>When properly tagged with keywords and descriptions, infographics can enhance SEO on
+                            Pinterest. This can improve discoverability, making it easier for users interested in
+                            specific topics to find your pins.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="number-box">
+                        <div class="number-bg"></div>
+                        <div class="number-fg"></div>
+                        <div class="number">6</div>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="timeline-item">
+                <div class="connector"></div>
+                <div class="left">
+                    <div class="number-box">
+                        <div class="number-bg"></div>
+                        <div class="number-fg"></div>
+                        <div class="number">7</div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="content">
+                        <h3>Creating Educational Content</h3>
+                        <p>Infographics can serve as educational tools or tutorials, providing value to your audience.
+                            This type of informative content can establish authority in your niche and attract a loyal
+                            following.</p>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Take Screenshot Button -->
+    <button class="screenshot-button">Take Screenshot</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
